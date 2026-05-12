@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-royal-peach: #FFE5B4;
+  --color-peach-light: #FFF2D9;
+  --color-peach-dark: #FFD18B;
+  --color-gold: #D4AF37;
+  --color-crimson: #8B0000;
+  --color-obsidian: #1C1C1E;
+  --color-soft-gray: #F5F5F7;
+  --color-apple-bg: #FAFAFA;
+  
+  /* Legacy Aliases */
+  --color-nykaa-pink: var(--color-crimson);
+  --color-sandal-pink: var(--color-royal-peach);
+  --color-sandal-dark: var(--color-gold);
+  --color-sandal-bg: var(--color-apple-bg);
+  --color-vibrant-pink: var(--color-crimson);
+  
+  --font-sans: var(--font-jakarta);
+}
+
+:root {
+  --background: #FAFAFA;
+  --foreground: #1C1C1E;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
+.nykaa-shadow {
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+.apple-shadow {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.glassmorphism {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background-color: rgba(255, 229, 180, 0.6); /* Royal Peach tint */
+}
+
+/* Hide scrollbar for cleaner look in horizontal scroll */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <style>
+      .bg-outer { fill: #F1EBE1; }
+      .bg-inner { fill: #FFFFFF; }
+      .border-gold { fill: none; stroke: #C8B97B; stroke-width: 2.5; stroke-dasharray: 4 2; }
+      .border-gold-outer { fill: none; stroke: #E2D7B2; stroke-width: 1; }
+      .letter-p { fill: #C8B97B; font-family: "Georgia", serif; font-size: 85px; font-weight: normal; letter-spacing: -5px; }
+      .letter-b { fill: #793543; font-family: "Georgia", serif; font-size: 85px; font-weight: normal; }
+    </style>
+  </defs>
+
+  <!-- Outer Beige Circle -->
+  <circle class="bg-outer" cx="100" cy="100" r="95" />
+
+  <!-- White Inner Circle -->
+  <circle class="bg-inner" cx="100" cy="100" r="65" />
+
+  <!-- Gold Decorative Borders -->
+  <circle class="border-gold-outer" cx="100" cy="100" r="70" />
+  <circle class="border-gold" cx="100" cy="100" r="67" />
+
+  <!-- Letters PB -->
+  <text x="65" y="130" class="letter-p">P</text>
+  <text x="100" y="130" class="letter-b">B</text>
+</svg>
