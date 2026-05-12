@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import Header from "@/components/Header";
 import ProductGrid from "@/components/ProductGrid";
 import CartDrawer from "@/components/CartDrawer";
@@ -64,7 +64,9 @@ export default function Home() {
            <p className="text-[11px] text-obsidian/60 font-medium tracking-widest uppercase">Home <span className="mx-2 text-sandal-dark/50">/</span> Women <span className="mx-2 text-sandal-dark/50">/</span> <span className="text-sandal-dark">Indian Wear</span></p>
         </div>
 
-        <ProductGrid onCartOpen={() => router.push('/cart')} />
+        <Suspense fallback={<div className="py-20 text-center text-obsidian/60">Loading collection...</div>}>
+          <ProductGrid onCartOpen={() => router.push('/cart')} />
+        </Suspense>
       </main>
       
         {/* Footer */}
