@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import "@n8n/chat/style.css";
 import dynamic from "next/dynamic";
 const ChatWidget = dynamic(() => import("@/components/ChatWidget"), { ssr: false });
 
