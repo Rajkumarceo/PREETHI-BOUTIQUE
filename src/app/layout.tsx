@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import "@n8n/chat/style.css";
-import dynamic from "next/dynamic";
-const ChatWidget = dynamic(() => import("@/components/ChatWidget"), { ssr: false });
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -26,9 +23,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+      </head>
       <body className={`${jakarta.variable} font-sans bg-white text-obsidian antialiased min-h-screen pb-[60px] md:pb-0`}>
         {children}
-        <ChatWidget />
+        
+        <script type="module" dangerouslySetInnerHTML={{
+          __html: `
+            import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+            createChat({
+              webhookUrl: 'https://thara-in.app.n8n.cloud/webhook/9cc9ecd9-4f0c-4d15-acd7-f4a76813a61b/chat',
+              mode: 'window',
+              showWelcomeScreen: true,
+              initialMessages: [
+                "Hi there! 👋",
+                "My name is Preethi. How can I assist you today?"
+              ]
+            });
+          `
+        }} />
       </body>
     </html>
   );
