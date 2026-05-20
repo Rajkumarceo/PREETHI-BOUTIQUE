@@ -14,8 +14,8 @@ export default function ProductDetails() {
   const { addToCart } = useStore();
   const router = useRouter();
   
-  // Just use the first product as mock
-  const product = products[0];
+  // Find the product by id from the URL params, fallback to products[0] if not found
+  const product = products.find(p => p.id === params.id) || products[0];
 
   return (
     <div className="relative bg-white min-h-screen">
