@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Package, Heart, ShoppingBag, Settings, LogOut, ChevronRight } from "lucide-react";
 import { useStore } from "@/store/useStore";
 import Link from "next/link";
+import WorkflowCanvas from "@/components/WorkflowCanvas";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -132,6 +133,17 @@ export default function DashboardPage() {
                   ))}
                 </div>
               )}
+            </div>
+
+            {/* AI Agent Workflow Canvas */}
+            <div className="bg-white rounded-[30px] p-8 apple-shadow border border-sandal-dark/10 h-[600px] flex flex-col">
+              <div className="mb-6">
+                <h3 className="font-serif italic text-2xl text-obsidian">AI Operations Workflow</h3>
+                <p className="text-obsidian/60 text-sm font-light mt-1">Live routing visualization for the Style Concierge agent.</p>
+              </div>
+              <div className="flex-1 rounded-[20px] overflow-hidden">
+                <WorkflowCanvas />
+              </div>
             </div>
 
           </motion.div>
